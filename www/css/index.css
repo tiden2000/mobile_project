@@ -204,6 +204,7 @@ input {
 
 
 #page-list #btn-filter-popup {
+  margin-top: 50px;
   background-color: #595959 !important;
   color: white !important;
   font-weight: normal !important;
@@ -212,8 +213,8 @@ input {
   -moz-box-shadow: none !important;
   -webkit-box-shadow: none !important;
   border: none !important;
-  width: 40px !important;
-  height: 37px;
+  width: 55px !important;
+  height: 20px;
   margin-bottom: 8px;
   background-image: url("../img/icon-filter.png");
   background-size: 25px;

@@ -275,12 +275,10 @@
                     </tbody></table>
 
                     <div class="ui-grid-a">
-                        <div class="ui-block-a" style="padding: 5px;">
-                            <button type="button" id="edit" class=" ui-btn ui-shadow ui-corner-all">Edit</button>
-                        </div>
+
 
                         <div class="ui-block-b" style="padding: 5px;">
-                            <button type="submit" class="green ui-btn ui-shadow ui-corner-all">Confirm</button>
+                            <button type="submit" class="green ui-btn ui-shadow ui-corner-all" style="margin-left: 50%;">Confirm</button>
                         </div>
                     </div>
                 </form>
@@ -333,25 +331,29 @@
             </div>
     
             <div data-role="main">
-                <a href="#frm-search" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-grid" id="btn-filter-popup" data-rel="popup" data-position-to="window" data-transition="pop"
-                        class="ui-btn ui-corner-all ui-btn-b">Filter Properties</a>
-                        
+                <a href="#frm-search" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-grid" id="btn-filter-popup" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-btn-b">FILTER</a>
                     <ul id="list-property" data-role="listview" class="ui-nodisc-icon ui-alt-icon"></ul>
                    
                     <!-- Search filter-->
-                    <form data-role="popup" id="frm-search" class="ui-content" style="width: 80vw;" data-overlay-theme="b">
+                    <form data-role="popup" id="frm-search" class="ui-content" style="width: 300px;" data-overlay-theme="b">
                         <input type="text" id="name" placeholder="Property Name" data-clear-btn="true">
-        
+                        <br>
+                        <br>
+
                         <fieldset data-role="controlgroup">
                             <select id="type">
                             </select>
                         </fieldset>
+                        <br>
+                        <br>
         
-                        <label style="text-align: center;">Monthly Price</label>
+                        <label style="text-align: center;">Price</label>
                         <div data-role="rangeslider" data-mini="true">
                             <input type="range" id="price-min" min="0" max="1000000000" value="0">
                             <input type="range" id="price-max" min="0" max="1000000000" value="1000000000">
                         </div>
+                        <br>
+                        <br>
         
                         <button type="submit">Search</button>
                     </form>
@@ -377,33 +379,6 @@
                         </li>
                     </ul>
                 </div>
-            </div>
-
-            <div class="ui-popup-screen ui-overlay-b ui-screen-hidden" id="frm-search-screen"></div><div class="ui-popup-container ui-popup-hidden ui-popup-truncate" id="frm-search-popup"><form data-role="popup" id="frm-search" class="ui-content ui-popup ui-body-inherit ui-overlay-shadow ui-corner-all" style="width: 80vw;" data-overlay-theme="b">
-                    <div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset ui-input-has-clear"><input type="text" id="name" placeholder="Property Name" data-clear-btn="true"><a href="#" tabindex="-1" aria-hidden="true" class="ui-input-clear ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all ui-input-clear-hidden" title="Clear text">Clear text</a></div>
-                    <div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset ui-input-has-clear"><input type="number" id="bedroom" data-clear-btn="true" placeholder="Number of Bedrooms"><a href="#" tabindex="-1" aria-hidden="true" class="ui-input-clear ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all ui-input-clear-hidden" title="Clear text">Clear text</a></div>
-                    <div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset ui-input-has-clear"><input type="text" id="reporter" data-clear-btn="true" placeholder="Reporter"><a href="#" tabindex="-1" aria-hidden="true" class="ui-input-clear ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all ui-input-clear-hidden" title="Clear text">Clear text</a></div>
-                    <div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset ui-input-has-clear"><input type="text" id="street" placeholder="Street No. &amp; Name" data-clear-btn="true"><a href="#" tabindex="-1" aria-hidden="true" class="ui-input-clear ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all ui-input-clear-hidden" title="Clear text">Clear text</a></div>
-    
-                    <fieldset data-role="controlgroup" class="ui-controlgroup ui-controlgroup-vertical ui-corner-all"><div class="ui-controlgroup-controls ">
-                        <div class="ui-select"><div id="city-button" class="ui-btn ui-icon-carat-d ui-btn-icon-right ui-corner-all ui-shadow ui-first-child"><span>Select City</span><select id="city"><option value="-1">Select City</option><option value="92">Thành phố Cần Thơ</option><option value="1">Thành phố Hà Nội</option><option value="31">Thành phố Hải Phòng</option><option value="79">Thành phố Hồ Chí Minh</option><option value="48">Thành phố Đà Nẵng</option><option value="89">Tỉnh An Giang</option><option value="77">Tỉnh Bà Rịa - Vũng Tàu</option><option value="74">Tỉnh Bình Dương</option><option value="70">Tỉnh Bình Phước</option><option value="60">Tỉnh Bình Thuận</option><option value="52">Tỉnh Bình Định</option><option value="95">Tỉnh Bạc Liêu</option><option value="24">Tỉnh Bắc Giang</option><option value="6">Tỉnh Bắc Kạn</option><option value="27">Tỉnh Bắc Ninh</option><option value="83">Tỉnh Bến Tre</option><option value="4">Tỉnh Cao Bằng</option><option value="96">Tỉnh Cà Mau</option><option value="64">Tỉnh Gia Lai</option><option value="17">Tỉnh Hoà Bình</option><option value="2">Tỉnh Hà Giang</option><option value="35">Tỉnh Hà Nam</option><option value="42">Tỉnh Hà Tĩnh</option><option value="33">Tỉnh Hưng Yên</option><option value="30">Tỉnh Hải Dương</option><option value="93">Tỉnh Hậu Giang</option><option value="56">Tỉnh Khánh Hòa</option><option value="91">Tỉnh Kiên Giang</option><option value="62">Tỉnh Kon Tum</option><option value="12">Tỉnh Lai Châu</option><option value="80">Tỉnh Long An</option><option value="10">Tỉnh Lào Cai</option><option value="68">Tỉnh Lâm Đồng</option><option value="20">Tỉnh Lạng Sơn</option><option value="36">Tỉnh Nam Định</option><option value="40">Tỉnh Nghệ An</option><option value="37">Tỉnh Ninh Bình</option><option value="58">Tỉnh Ninh Thuận</option><option value="25">Tỉnh Phú Thọ</option><option value="54">Tỉnh Phú Yên</option><option value="44">Tỉnh Quảng Bình</option><option value="49">Tỉnh Quảng Nam</option><option value="51">Tỉnh Quảng Ngãi</option><option value="22">Tỉnh Quảng Ninh</option><option value="45">Tỉnh Quảng Trị</option><option value="94">Tỉnh Sóc Trăng</option><option value="14">Tỉnh Sơn La</option><option value="38">Tỉnh Thanh Hóa</option><option value="34">Tỉnh Thái Bình</option><option value="19">Tỉnh Thái Nguyên</option><option value="46">Tỉnh Thừa Thiên Huế</option><option value="82">Tỉnh Tiền Giang</option><option value="84">Tỉnh Trà Vinh</option><option value="8">Tỉnh Tuyên Quang</option><option value="72">Tỉnh Tây Ninh</option><option value="86">Tỉnh Vĩnh Long</option><option value="26">Tỉnh Vĩnh Phúc</option><option value="15">Tỉnh Yên Bái</option><option value="11">Tỉnh Điện Biên</option><option value="66">Tỉnh Đắk Lắk</option><option value="67">Tỉnh Đắk Nông</option><option value="75">Tỉnh Đồng Nai</option><option value="87">Tỉnh Đồng Tháp</option></select></div></div>
-                        <div class="ui-select"><div id="district-button" class="ui-btn ui-icon-carat-d ui-btn-icon-right ui-corner-all ui-shadow"><span>Select District</span><select id="district"><option value="-1">Select District</option></select></div></div>
-                        <div class="ui-select"><div id="ward-button" class="ui-btn ui-icon-carat-d ui-btn-icon-right ui-corner-all ui-shadow ui-last-child"><span>Select Ward</span><select id="ward"><option value="-1">Select Ward</option></select></div></div>
-                    </div></fieldset>
-    
-                    <fieldset data-role="controlgroup" class="ui-controlgroup ui-controlgroup-vertical ui-corner-all"><div class="ui-controlgroup-controls ">
-                        <div class="ui-select"><div id="type-button" class="ui-btn ui-icon-carat-d ui-btn-icon-right ui-corner-all ui-shadow ui-first-child"><span>Select Type</span><select id="type"><option value="-1">Select Type</option><option value="0">Apartment</option><option value="1">Penthouse</option><option value="2">House</option><option value="3">Villa</option></select></div></div>
-                        <div class="ui-select"><div id="furniture-button" class="ui-btn ui-icon-carat-d ui-btn-icon-right ui-corner-all ui-shadow ui-last-child"><span>Select Furniture</span><select id="furniture"><option value="-1">Select Furniture</option><option value="0">Unfurnished</option><option value="1">Half Furnished</option><option value="2">Furnished</option></select></div></div>
-                    </div></fieldset>
-    
-                    <label class="small-text" style="text-align: center;">Monthly Price</label>
-                    <div data-role="rangeslider" data-mini="true" class="ui-rangeslider ui-mini">
-                        <input type="number" data-type="range" id="price-min" min="0" max="1000000000" value="0" class="ui-shadow-inset ui-corner-all ui-slider-input ui-rangeslider-first ui-body-inherit">
-                        <input type="number" data-type="range" id="price-max" min="0" max="1000000000" value="1000000000" class="ui-shadow-inset ui-corner-all ui-slider-input ui-rangeslider-last ui-body-inherit">
-                    <div class="ui-rangeslider-sliders"><div role="application" class="ui-slider-track ui-shadow-inset ui-bar-inherit ui-corner-all ui-mini" aria-disabled="false"><div class="ui-slider-bg ui-btn-active" style="width: 100%; margin-left: 0%;"></div></div><div role="application" class="ui-slider-track ui-shadow-inset ui-bar-inherit ui-corner-all ui-mini" aria-disabled="false"><div class="ui-slider-bg ui-btn-active" style="width: 100%; margin-left: 0%;"></div><a href="#" class="ui-slider-handle ui-btn ui-shadow ui-btn-null" role="slider" aria-valuemin="0" aria-valuemax="1000000000" aria-valuenow="0" aria-valuetext="0" title="0" aria-labelledby="price-min-label" style="left: 0%;"></a><a href="#" class="ui-slider-handle ui-btn ui-shadow ui-btn-null" role="slider" aria-valuemin="0" aria-valuemax="1000000000" aria-valuenow="1000000000" aria-valuetext="1000000000" title="1000000000" aria-labelledby="price-max-label" style="left: 100%;"></a></div></div></div>
-    
-                    <button type="submit" class="green ui-btn ui-shadow ui-corner-all">Search</button>
-                </form>
             </div>
         </div>
 
@@ -458,7 +433,7 @@
 
                     <div class="ui-block-b" style="padding-left: 5px;">
                         <a href="#frm-delete" data-rel="popup" data-position-to="window" data-transition="pop"
-                            class="ui-btn ui-corner-all ui-btn-b">Delete</a>
+                            class="ui-btn ui-corner-all ui-btn-b" style="margin-top:50px">Delete</a>
                     </div>
                 </div>
 
@@ -647,21 +622,10 @@
                 </div>
             </div>
 
-            <div data-role="main" class="ui-content" style="text-align: center;">
-                <h1>CORDOVA SAMPLE</h1>
-                <img src="img/boyscout_logo.png" width="150px" style="margin-bottom: 25px;">
-
-                <h2>Contact</h2>
-                <p style="margin-bottom: 7px;">Author</p>
-                <strong><em>Hồ Nguyễn Phú Bảo</em></strong>
-                <p style="margin-bottom: 7px; margin-top: 25px;">Email</p>
-                <strong><em><a href="mailto:baohnp@fe.edu.vn" class="ui-link">baohnp@fe.edu.vn</a></em></strong>
-                <p style="margin-bottom: 7px; margin-top: 25px;">Phone</p>
-                <strong><em><a href="tel:+84962242999" class="ui-link">(84) 96 2242 999</a></em></strong>
-
-                <p style="margin-top: 30px;"><em>Copyright © 2021 Serco Honan. All rights reserved.</em></p>
-                <p><em>Create your own application for the courseworks.</em></p>
-                <p><strong><em>I know my codes so well. Be careful !!!</em></strong></p>
+            <div data-role="main" class="ui-content" style="text-align: center; margin-top: 50px;">
+                <img src="img/logo.png" width="75%">
+                <h3>CONTACT US:</h3><a href="">rentalz@mail.com</a>
+                <br><br><h2 style="color:cornflowerblue;">RENTALZ</h2><h3>“Let us Guide you Home”</h3>
             </div>
 
             <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="" role="contentinfo" class="ui-footer ui-bar-inherit ui-footer-fixed slideup">

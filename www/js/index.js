@@ -138,10 +138,11 @@ function addProperty(e) {
     if (isValid('#page-create #frm-register')) {
         // Get input data from form
         var form_data = getFormByName('#page-create #frm-register', true);
+        var date = new Date();
 
     db.transaction(function (tx) {
         var query = 'INSERT INTO Property (Name, Address, City, District, Ward, Type, Bedroom, Date, Price, Furniture, Reporter) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
-        tx.executeSql(query, [form_data.Name, form_data.Street, form_data.City, form_data.District, form_data.Ward, form_data.Type, form_data.Bedroom, form_data.DateAdded, form_data.Price, form_data.Furniture, form_data.Reporter], transactionSuccess, transactionError);
+        tx.executeSql(query, [form_data.Name, form_data.Street, form_data.City, form_data.District, form_data.Ward, form_data.Type, form_data.Bedroom, date, form_data.Price, form_data.Furniture, form_data.Reporter], transactionSuccess, transactionError);
 
         console.log(query);
 
@@ -462,11 +463,18 @@ function showList() {
                                                      data-corners='false' class='ui-nodisc-icon ui-alt-icon'>`;
             for (let property of result.rows) {
                 listProperty += `<li><a data-details='{"Id" : ${property.Id}}'>
-                                    <h3>Property Name: ${property.Name}</h3>
-                                    <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-grid">${property.Type}</button>
-                                    <p><button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-tag">${property.Price}</button></p>
                                     <p>ID: ${property.Id}</p>
-                                </a></li>`;
+
+                                    <h3>NAME:</h3>
+                                    <p style="font-size:26px;text-decoration: underline;">${property.Name}</p>
+
+                                    <h3>TYPE:</h3>
+                                    <p style="font-size:26px;text-decoration: underline;">${property.Type}</p>
+
+                                    <h3>PRICE:</h3>
+                                    <p style="font-size:26px;text-decoration: underline;">${property.Price} VND</p>
+                                    </a>
+                                </li>`;
             }
             listProperty += `</ul>`;
 
@@ -604,13 +612,13 @@ function filterProperty() {
         li[i].style.display = text.toLowerCase().indexOf(filter) > -1 ? "" : "none";
     }
 }
-//Add note 
+// Add Note 
 $(document).on('submit', '#page-detail #frm-note', addNote);
 function addNote(e) {
     e.preventDefault();
 
     var propertyId = localStorage.getItem('currentPropertyId');
-    var note = $('#page-detail #frm-note #txt-note').val();
+    var note = $('#page-detail #frm-note #message').val();
     var dateTime = new Date();
     db.transaction(function (tx) {
         var query = 'INSERT INTO Note (PropertyId, Note, Datetime) VALUES (?, ?, ?)';
@@ -625,7 +633,7 @@ function addNote(e) {
         }
     });
 }
-//Show note
+// Display Note
 function showNote() {
     var propertyId = localStorage.getItem('currentPropertyId');
     db.transaction(function (tx) {
@@ -651,10 +659,10 @@ function showNote() {
     });
 }
 
-//event for property search
+// Property search event
 $(document).on('submit', '#page-list #frm-search', search);
 
-//Search Property
+// Search Property
 function search(e) {
     e.preventDefault();
 
